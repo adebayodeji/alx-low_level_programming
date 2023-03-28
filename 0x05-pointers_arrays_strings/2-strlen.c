@@ -1,17 +1,15 @@
-#include "main.h"
-
+#include "holberton.h"
 /**
- * _strlen - Returns the length of a string.
- * @str: string.
+ * _strlen - gets character string
  *
- * Return: length.
+ * @s: character to getstring
+ * Return: returns length
  */
-size_t _strlen(const char *str)
+int _strlen(char *s)
 {
-	size_t len = 0;
+	int i;
 
-	while (*str++)
-		len++;
-
-	return (len);
+	for (i = 0; s[i] != '\0'; i++)
+	{}
+	return (i);
 }
