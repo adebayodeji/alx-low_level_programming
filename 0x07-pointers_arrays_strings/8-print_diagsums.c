@@ -1,29 +1,20 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
- * print_diagsums - prints the sums of diagonals .
- * @a: pointer to an array
- * @size: size of the matrix
- *
- * Return: void
+ * print_diagsums - prints diagonal summaries
+ * @a: array to use
+ * @size: size of diagonal
  */
-
 void print_diagsums(int *a, int size)
 {
-	int i, j;
-	int c = 0;
-	int d = 0;
+	int i;
+	int diagO = 0;
+	int diagT = 0;
 
 	for (i = 0; i < size; i++)
 	{
-		c = c + *(a + i * sizeof(int));
+		diagO += a[(i * size) + i];
+		diagT += a[(size - 1) + ((size - 1) * i)];
 	}
-
-	for (j = 0; j < size; j++)
-
-	{
-		d = d + *(a + (size * j) + (size - j - 1));
-	}
-	printf("%d, %d\n", c, d);
+	printf("%d, %d\n", diagO, diagT);
 }
